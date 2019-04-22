@@ -1,0 +1,52 @@
+.leftContent {
+  float: left;
+  width: 300px;
+  height: 100vh;
+  background-color: #2f3e51;
+
+  &__top {
+    height: 100px;
+    background-color: #253141;
+    width: 100%;
+    line-height: 100px;
+    &--name {
+        color: #ffffff;
+        float:left;
+        font-size:16px;
+        font-weight: bold;
+        padding-left: 20px;
+      }
+    &--editAccount a {
+      text-decoration: none;
+      color: #ffffff;
+      float: right;
+      margin: 0 20px 10px 0;
+    }
+
+    &--newGroup a {
+      text-decoration: none;
+      color: #ffffff;
+      float: right;
+      margin: 0 10px 10px 0;
+    }
+  }
+
+  &__groups--group {
+    padding: 0 20px 0 20px;
+      &--name a {
+      color: #ffffff;
+      font-size:15px;
+      margin: 20px 0 5px 0;
+      }
+
+      &--message a {
+      color: #ffffff;
+      font-size:11px;
+      font-weight: normal;
+      padding-bottom:40px; 
+        } 
+    
+  }
+}
+
+

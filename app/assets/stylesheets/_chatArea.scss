@@ -1,0 +1,26 @@
+.chatArea {
+  background-color: #fafafa;
+  padding: 0 40px 0 40px;
+  height: -webkit-calc(100% - 190px) ;
+  height: calc(100% - 190px);
+
+
+    &__chat {
+    padding: 40px 0 40px 0;
+
+      &--name {
+        font-size: 16px;
+        padding-top: 46px;
+        display: inline-block;
+      }
+      &--date {
+        font-size: 12px;
+        color: #999999;
+        display: inline-block;
+      }
+      &--message {
+        font-size: 14px;
+        color: #434A54;
+      }
+    }
+}

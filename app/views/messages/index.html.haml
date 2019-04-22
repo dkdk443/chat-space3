@@ -1,0 +1,37 @@
+.contents
+  .leftContent
+    .leftContent__top
+      .leftContent__top--name
+        = current_user.name
+      .leftContent__top--editAccount
+        = link_to edit_user_path(current_user) do
+          = fa_icon "cog"
+      .leftContent__top--newGroup
+        -# = link_to new_group_path do
+          = fa_icon "edit"
+
+
+    = render 'leftcontentGroups'
+
+  .rightContent
+    .rightContent__top
+      .rightContent__top--editBtn
+        -# = link_to "Edit", edit_group_path(current_user)
+      .rightContent__top--groupName
+        グループ名
+      .rightContent__top--groupMember
+        Member: tanaka takahasi nakata nakano hamada
+
+
+    = render partial: 'chatarea'
+  
+
+    .sendMessage
+      .sendMessage__inputArea
+        .sendMessage__inputArea--textArea
+          %input(type="text")
+            .sendMessage__inputArea--textArea--selectImages
+            -# = link_to "/" do
+            -#   = fa_icon "images" 
+        .sendMessage__inputArea--sendBtn
+          = link_to('Send', {})

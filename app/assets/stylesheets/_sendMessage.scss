@@ -1,0 +1,44 @@
+.sendMessage {
+  height: 90px;
+  background-color:#ddd;
+  width: 100%;
+
+  &__inputArea {
+      line-height: 90px;
+      padding: 20px 40px;
+      margin: 0;
+      height: 50px;
+      display: flex;
+      
+      &--textArea {
+        float: left;
+        display: flex;
+        width: 100%;
+      }
+
+      &--textArea input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 10px;
+        height: 50px;
+        width: 100%;
+      }
+
+      &--sendBtn a{
+        display: inline-block;
+        height: 50px;
+        background-color: #38AEF0;
+        color: white;
+        float: right;
+        width: 100px;
+        text-align: center;
+        margin: 0 0 0 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+      }
+
+    }
+}
