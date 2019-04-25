@@ -18,28 +18,25 @@
           .groups__group--name
             = group.name
           .groups__group--message
-            まだメッセージはありません
-  
+            = group.show_last_message
 
   .rightContent
     .rightContent__top
       .rightContent__top--editBtn
         = link_to "Edit", edit_group_path(current_user)
       .rightContent__top--groupName
-        @group.name
+        = @group.name
       .rightContent__top--groupMember
         Member: tanaka takahasi nakata nakano hamada
 
-
-    = render partial: 'chatarea'
-  
-
+    .chatArea
+    = render partial: 'chatarea', collection: @messages
+    
     .sendMessage
       .sendMessage__inputArea
-        .sendMessage__inputArea--textArea
-          %input(type="text")
-            .sendMessage__inputArea--textArea--selectImages
-            -# = link_to "/" do
-            -#   = fa_icon "images" 
-        .sendMessage__inputArea--sendBtn
-          = link_to('Send', {})
+        = form_for [@group, @message] do |f|
+          = f.text_field :message, class:"sendMessage__inputArea--textArea", place_holder:"type messages"
+          = f.label :image, class: 'sendMessage__inputArea--textArea--selectImages' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'sendMessage__inputArea--sendBtn'

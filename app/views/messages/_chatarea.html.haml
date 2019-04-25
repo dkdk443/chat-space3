@@ -1,15 +1,11 @@
 .chatArea
   .chatArea__chat
     .chatArea__chat--name
-      田中太郎
+      = chatarea.user.name
     .chatArea__chat--date
-      2019/04/01(fri) 00:00:00
+      = chatarea.created_at.strftime("%Y/%m/%d %H:%M")
     .chatArea__chat--message
-      これはメッセージです
-  .chatArea--chat
-    .chatArea__chat--name
-      田中太郎
-    .chatArea__chat--date
-      2019/04/01(fri) 00:00:00
-    .chatArea__chat--message
-      これはメッセージです
+      = chatarea.message
+  
+
+
