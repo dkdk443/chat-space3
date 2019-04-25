@@ -2,35 +2,42 @@
   height: 90px;
   background-color:#ddd;
   width: 100%;
+  position: fixed;
+  bottom: 0;
 
   &__inputArea {
       line-height: 90px;
       padding: 20px 40px;
       margin: 0;
       height: 50px;
-      display: flex;
+      position: relative;
+
       
       &--textArea {
         float: left;
-        display: flex;
-        width: 100%;
-      }
-
-      &--textArea input {
-        display: flex;
         justify-content: center;
         align-items: center;
         padding-left: 10px;
         height: 50px;
-        width: 100%;
-      }
+        width: 70%;
+        margin-right: 20px;
+        
+        &--selectImages{
+          position: absolute;
+          bottom:0;
+          
+          .hidden {
+            display: none;
+          }
+        }
 
-      &--sendBtn a{
+      }
+      
+      &--sendBtn {
         display: inline-block;
         height: 50px;
         background-color: #38AEF0;
         color: white;
-        float: right;
         width: 100px;
         text-align: center;
         margin: 0 0 0 15px;
