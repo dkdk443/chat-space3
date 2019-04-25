@@ -32,17 +32,17 @@
     }
   }
 
-  &__group a {
+  &__groups a {
     padding: 0 20px 40px 20px;
     text-decoration: none;
     color: #ffffff;
-      .group--name  {
+      .groups__group--name  {
       font-size:15px;
       margin: 20px 0 5px 0;
       padding-left: 20px;
       }
 
-      .group--message  {
+      .groups__group--message  {
       font-size:11px;
       padding-left: 20px; 
       
