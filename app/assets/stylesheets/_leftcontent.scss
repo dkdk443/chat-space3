@@ -28,24 +28,22 @@
       color: #ffffff;
       float: right;
       margin: 0 10px 10px 0;
-     
     }
   }
 
-  &__group a {
-    padding: 0 20px 40px 20px;
-    text-decoration: none;
-    color: #ffffff;
-      .group--name  {
+  &__groups--group {
+    padding: 0 20px 0 20px;
+      &--name a {
+      color: #ffffff;
       font-size:15px;
       margin: 20px 0 5px 0;
-      padding-left: 20px;
       }
 
-      .group--message  {
+      &--message a {
+      color: #ffffff;
       font-size:11px;
-      padding-left: 20px; 
-      
+      font-weight: normal;
+      padding-bottom:40px; 
         } 
     
   }
