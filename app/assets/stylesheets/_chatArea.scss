@@ -1,7 +1,7 @@
 .chatArea {
   background-color: #fafafa;
   padding: 0 40px 0 40px;
-  height: -webkit-calc(100vh - 190px);
+  min-height: 150px;
 
 
     &__chat {
