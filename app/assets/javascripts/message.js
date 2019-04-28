@@ -44,9 +44,9 @@ $(function(){
       alert('error!')
     })
 
-    // .always(function(data){
-    //   $('#sendMessageBtn').prop("disable",false);
-    // });
+    .always(function(data){
+      $('#sendMessageBtn').prop("disabled",false);
+    });
 
   });
 })
