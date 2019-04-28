@@ -1,17 +1,23 @@
 $(function(){
   function buildHTML(message){
-    var html = ` <div class="chatArea__chat">
-                    <div class="chatArea__chat--name">
-                          ${user_id}
+    var html = ` <div class="chat">
+                    <div class="chat--name">
+                        ${message.name}
                     </div>
-                    <div class="chatArea__chat--date">
-                          ${created_at("%Y/%m/%d %H:%M")}
-                    <div class="chatArea__chat--message">
-                          ${message}
+                    <div class="chat--date">
+                          ${message.created_at}
+                    </div>
+                    <div class="chat--message">
+                          ${message.message}
                     </div>
                   </div>
                 ` 
     return html;
+    
+  }
+
+  function scroll(){
+    $('.chatArea').animate({scrollTop: $('.chatArea')[0].scrollHeight}, 'fast');
   }
 
   $('#new_message').on('submit', function(e){
@@ -26,16 +32,21 @@ $(function(){
       processData: false,
       contentType: false,
     })
-    .done(function(data){ 
-      // alert('sucsess!')
+    .done(function(data){
       var html = buildHTML(data);
-      $('.chatArea').append(html)
-      $('#sendMessageText').val()
-     }) 
+      $('.chatArea').append(html);
+      $('.chatArea').animate({scrollTop:$('.chatArea')[0].scrollHeight}, 'fast');
+      $('#sendMessageText').val('');
+     })
 
-    .fail(function(){
+    .fail(function(data){
+      console.log(data);
       alert('error!')
     })
+
+    // .always(function(data){
+    //   $('#sendMessageBtn').prop("disable",false);
+    // });
 
   });
 })
