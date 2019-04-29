@@ -1,51 +1,35 @@
-.sendMessage {
-  height: 90px;
+.inputArea {
   background-color:#ddd;
+  padding: 20px 40px;
   width: 100%;
-  position: fixed;
-  bottom: 0;
+  position: relative;
 
-  &__inputArea {
-      line-height: 90px;
-      padding: 20px 40px;
-      margin: 0;
-      height: 50px;
-      position: relative;
-
-      
-      &--textArea {
-        float: left;
-        justify-content: center;
-        align-items: center;
+      &__textArea {
+        line-height: 90px;
         padding-left: 10px;
         height: 50px;
-        width: 70%;
+        width: 80%;
         margin-right: 20px;
+        position: relative;
+   
         
-        &--selectImages{
-          position: absolute;
-          bottom:0;
-          
+        &--selectImages {
           .hidden {
             display: none;
           }
         }
-
       }
       
       &--sendBtn {
-        display: inline-block;
         height: 50px;
         background-color: #38AEF0;
         color: white;
         width: 100px;
         text-align: center;
         margin: 0 0 0 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-      }
-
+        float: right;
+      
+      
     }
+    
 }

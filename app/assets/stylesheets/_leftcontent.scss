@@ -1,15 +1,20 @@
+a {
+  text-decoration: none;
+}
+
 .leftContent {
   float: left;
   width: 300px;
   height: 100vh;
   background-color: #2f3e51;
   position: fixed;
+  
   // bottom: 0;
 
   &__top {
+    padding: 0 20px 0 20px;
     height: 100px;
     background-color: #253141;
-    width: 100%;
     line-height: 100px;
 
     &--name {
@@ -17,39 +22,39 @@
         float:left;
         font-size:16px;
         font-weight: bold;
-        padding-left: 20px;
       }
-    &--editAccount a {
+    &--menu a {
       text-decoration: none;
       color: #ffffff;
       float: right;
-      margin: 0 20px 10px 0;
-    }
-
-    &--newGroup a {
-      text-decoration: none;
-      color: #ffffff;
-      float: right;
-      margin: 0 10px 10px 0;
+      padding-left: 10px;
     }
   }
 
-  &__groups a {
-    padding: 0 20px 40px 20px;
-    text-decoration: none;
-    color: #ffffff;
-      .groups__group--name  {
-      font-size:15px;
-      margin: 20px 0 5px 0;
-      padding-left: 20px;
-      }
+  &__groups {
+    padding: 20px 20px 0 20px;
+    height: calc(100vh - 100px);
+    overflow: scroll;
+    .groups__group {
+      margin-bottom: 40px;
+
+        .groups__group--name  {
+        font-size:15px;
+        margin-bottom: 5px;
+        text-decoration: none;
+        color: #ffffff;
+        }
 
       .groups__group--message  {
       font-size:11px;
-      padding-left: 20px;
+      text-decoration: none;
+      color: #ffffff;
         }
-    
-  }
+        
+     }
+    }
 }
+
+
 
 

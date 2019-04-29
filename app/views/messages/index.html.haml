@@ -3,10 +3,11 @@
     .leftContent__top
       .leftContent__top--name
         = current_user.name
-      .leftContent__top--editAccount
+      
+      .leftContent__top--menu
         = link_to edit_user_path(current_user) do
           = fa_icon "cog"
-      .leftContent__top--newGroup
+      
         = link_to new_group_path do
           = fa_icon "edit"
 
@@ -14,29 +15,32 @@
     .leftContent__groups
       - current_user.groups.each do |group|
         .groups__group
-        = link_to group_messages_path(group) do
-          .groups__group--name
-            = group.name
-          .groups__group--message
-            = group.show_last_message
+          = link_to group_messages_path(group) do
+            .groups__group--name
+              = group.name
+            .groups__group--message
+              = group.show_last_message
 
   .rightContent
     .rightContent__top
-      .rightContent__top--editBtn
-        = link_to "Edit", edit_group_path(current_user)
+      = link_to "Edit", edit_group_path(current_user) 
       .rightContent__top--groupName
         = @group.name
       .rightContent__top--groupMember
-        Member: tanaka takahasi nakata nakano hamada
+        
+        %ul{class: "member-list"} 
+          Member: 
+          %li{class:"member"} tanaka
+          %li{class:"member"} takahasi
+          %li{class:"member"} nakata
 
     .chatArea
       = render partial: 'chatarea', collection: @messages
     
-    .sendMessage
-      .sendMessage__inputArea
-        = form_for [@group, @message] do |f|
-          = f.text_field :message, class:"sendMessage__inputArea--textArea", place_holder:"type messages", id:'sendMessageText'
-          = f.label :image, class: 'sendMessage__inputArea--textArea--selectImages' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'sendMessage__inputArea--sendBtn', id:'sendMessageBtn'
+    .inputArea
+      = form_for [@group, @message] do |f|
+        = f.text_field :message, class:"inputArea__textArea", place_holder:"type messages", id:'sendMessageText'
+        = f.label :image, class: 'inputArea__textArea--selectImages' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'inputArea--sendBtn', id:'sendMessageBtn'
