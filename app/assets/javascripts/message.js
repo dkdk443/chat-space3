@@ -13,11 +13,6 @@ $(function(){
                   </div>
                 ` 
     return html;
-    
-  }
-
-  function scroll(){
-    $('.chatArea').animate({scrollTop: $('.chatArea')[0].scrollHeight}, 'fast');
   }
 
   $('#new_message').on('submit', function(e){
@@ -40,7 +35,6 @@ $(function(){
      })
 
     .fail(function(data){
-      console.log(data);
       alert('error!')
     })
 
@@ -49,4 +43,6 @@ $(function(){
     });
 
   });
+
+
 })
