@@ -10,10 +10,11 @@
         = fa_icon "edit"
 
 
-  .leftContent__group
+  .leftContent__groups
     - current_user.groups.each do |group|
+      .groups__group
       = link_to group_messages_path(group) do
-        .group--name
+        .groups__group--name
           = group.name
-        .group--message
-          まだメッセージはありません
+        .groups__group--message
+          = group.show_last_message

@@ -4,13 +4,14 @@
   height: 100vh;
   background-color: #2f3e51;
   position: fixed;
-  bottom: 0;
+  // bottom: 0;
 
   &__top {
     height: 100px;
     background-color: #253141;
     width: 100%;
     line-height: 100px;
+
     &--name {
         color: #ffffff;
         float:left;
@@ -30,7 +31,6 @@
       color: #ffffff;
       float: right;
       margin: 0 10px 10px 0;
-     
     }
   }
 
@@ -46,9 +46,8 @@
 
       .groups__group--message  {
       font-size:11px;
-      padding-left: 20px; 
-      
-        } 
+      padding-left: 20px;
+        }
     
   }
 }

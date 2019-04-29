@@ -1,11 +1,10 @@
-.chatArea
-  .chatArea__chat
-    .chatArea__chat--name
-      = chatarea.user.name
-    .chatArea__chat--date
-      = chatarea.created_at.strftime("%Y/%m/%d %H:%M")
-    .chatArea__chat--message
-      = chatarea.message
-  
+.chat
+  .chat--name
+    = chatarea.user.name
+  .chat--date
+    = chatarea.created_at.strftime("%Y/%m/%d %H:%M")
+  .chat--message
+    = chatarea.message
+
 
 

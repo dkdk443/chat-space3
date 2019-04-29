@@ -30,13 +30,13 @@
         Member: tanaka takahasi nakata nakano hamada
 
     .chatArea
-    = render partial: 'chatarea', collection: @messages
+      = render partial: 'chatarea', collection: @messages
     
     .sendMessage
       .sendMessage__inputArea
         = form_for [@group, @message] do |f|
-          = f.text_field :message, class:"sendMessage__inputArea--textArea", place_holder:"type messages"
+          = f.text_field :message, class:"sendMessage__inputArea--textArea", place_holder:"type messages", id:'sendMessageText'
           = f.label :image, class: 'sendMessage__inputArea--textArea--selectImages' do
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'sendMessage__inputArea--sendBtn'
+          = f.submit 'Send', class: 'sendMessage__inputArea--sendBtn', id:'sendMessageBtn'
