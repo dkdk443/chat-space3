@@ -19,6 +19,7 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var href = window.location.href
+    console.log(href)
     $.ajax({
       url: href,
       type: "POST",
@@ -28,21 +29,21 @@ $(function(){
       contentType: false,
     })
     .done(function(data){
+     
       var html = buildHTML(data);
       $('.chatArea').append(html);
       $('.chatArea').animate({scrollTop:$('.chatArea')[0].scrollHeight}, 'fast');
       $('#sendMessageText').val('');
      })
-
     .fail(function(data){
       alert('error!')
     })
-
     .always(function(data){
       $('#sendMessageBtn').prop("disabled",false);
     });
 
   });
+
 
 
 })
