@@ -56,7 +56,6 @@ $(function(){
 
   $('#user-search-result').on('click', '.user-search-add',function(){
     var user_id = $(this).attr('data-user-id');
-   
     var name = $(this).attr('data-user-name');
     $(this).parent().remove();
     appendChatUser(user_id, name);
