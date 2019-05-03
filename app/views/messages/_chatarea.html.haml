@@ -1,10 +1,9 @@
-.chat
-  .chat--name{data: {name_id:"name"}}
+.chat{data:{messege_id: chatarea.id }}
+  .chat--name
     = chatarea.user.name
-  .chat--date{data: {date_id: "date"}}
+  .chat--date
     = chatarea.created_at.strftime("%Y/%m/%d %H:%M")
-  .chat--message{data: {message_id: "message"}}
+  .chat--message
     = chatarea.message
-  .chat--image{data: {image_id: "image"}}
+  .chat--image
     = image_tag chatarea.image.to_s
- 

@@ -1,15 +1,21 @@
 $(function(){
   function buildHTML(message){
-    var html = ` <div class="chat">
+    var image_html = ''
+    if(message.image.url) {
+      image_html =`<div class="chat--image">
+                    <img src="${message.image.url}">   </div>`
+    }
+    var html = ` <div class="chat" data-message-id= ${message.id} >
                     <div class="chat--name">
                         ${message.name}
                     </div>
                     <div class="chat--date">
-                          ${message.created_at}
+                        ${message.created_at}
                     </div>
                     <div class="chat--message">
-                          ${message.message}
+                        ${message.message}
                     </div>
+                      ${image_html}
                   </div>
                 ` 
     return html;
@@ -19,7 +25,6 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var href = window.location.href
-    console.log(href)
     $.ajax({
       url: href,
       type: "POST",
@@ -43,25 +48,34 @@ $(function(){
 
   });
 
-  var reloadMessages = function() {
-    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    last_message_id = ※※※
+  var interval = setInterval(function(message){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      $('.chat:last').data()
+    var last_message_id = $('.chat:last').data();
+    console.log(last_message_id)
+    // var group_id = $('.chatArea').data();
+    // console.log(group_id)
+
     $.ajax({
-      //ルーティングで設定した通りのURLを指定
-      url: ※※※,
-      //ルーティングで設定した通りhttpメソッドをgetに指定
+      url: "api/messages/",
       type: 'get',
       dataType: 'json',
-      //dataオプションでリクエストに値を含める
-      data: {id: last_message_id}
+      data: {id: last_message_id},
     })
-    .done(function(messages) {
-      console.log('success');
+    .done(function(messages){
+      console.log('sucsess!')
+      var insertHTML = ''
+      messages.forEach(function(message){
+        insertHTML = buildHTML(message);
+        $('.chatArea').append(insertHTML);
+        $('.chatArea').animate({scrollTop:$('.chatArea')[0].scrollHeight}, 'fast');
+      });
     })
-    .fail(function() {
+    .fail(function(messages) {
       console.log('error');
-    });
-  };
+    }) 
+  } else{
+    clearInterval(interval);
+    }} , 5000 )
 
-
-})
+});

@@ -13,7 +13,7 @@
           - @group.users.each do |user|
             %li{class:"member"} #{user.name}
 
-    .chatArea
+    .chatArea{data:{group_id: @group.id }}
       = render partial: 'chatarea', collection: @messages
     
     .inputArea
