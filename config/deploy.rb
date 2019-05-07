@@ -5,7 +5,7 @@ set :application, 'chat-space3'
 set :repo_url,  'git@github.com:kana4477/chat-space3.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
-set :linked_files, %w{ 'config/master.key' }
+# set :linked_files, %w{ 'config/master.key' }
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
