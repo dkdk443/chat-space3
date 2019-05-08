@@ -3,7 +3,8 @@ $(function(){
     var image_html = ''
     if(message.image.url) {
       var image_html =`<div class="chat--image">
-                    <img src="${message.image.url}">   </div>`
+                    <img src="${message.image.url}">   
+                    </div>`
     }
     var html = ` <div class="chat" data-message-id= ${message.id} >
                     <div class="chat--name">
@@ -38,9 +39,10 @@ $(function(){
       $('.chatArea').append(html);
       $('.chatArea').animate({scrollTop:$('.chatArea')[0].scrollHeight}, 'fast');
       $('#sendMessageText').val('');
+      $('#message_image').val('');
      })
     .fail(function(data){
-      alert('error!')
+      alert('ajax-error!')
     })
     .always(function(data){
       $('#sendMessageBtn').prop("disabled",false);
@@ -52,10 +54,6 @@ $(function(){
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
       $('.chat:last').data()
     var last_message_id = $('.chat:last').data();
-    console.log(last_message_id)
-    // var group_id = $('.chatArea').data();
-    // console.log(group_id)
-
     $.ajax({
       url: "api/messages/",
       type: 'get',
