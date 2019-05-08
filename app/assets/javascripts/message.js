@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     var image_html = ''
     if(message.image.url) {
-      image_html =`<div class="chat--image">
+      var image_html =`<div class="chat--image">
                     <img src="${message.image.url}">   </div>`
     }
     var html = ` <div class="chat" data-message-id= ${message.id} >
