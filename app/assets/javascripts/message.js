@@ -1,9 +1,9 @@
 $(function(){
   function buildHTML(message){
     var image_html = ''
-    if(message.image.url) {
+    if(message.image) {
       var image_html =`<div class="chat--image">
-                    <img src="${message.image.url}">   
+                    <img src="${message.image}">   
                     </div>`
     }
     var html = ` <div class="chat" data-message-id= ${message.id} >
